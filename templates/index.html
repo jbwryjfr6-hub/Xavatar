@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول الأفاتار - PS4</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: white; text-align: center; padding: 50px; }
+        .container { background: #1e1e1e; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        h1 { color: #00a8ff; }
+        input[type="file"] { display: none; }
+        .upload-btn { background: #00a8ff; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: inline-block; margin: 10px 0; }
+        .shape-select { margin: 20px 0; }
+        button { background: #4cd137; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #44bd32; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>محول الأفاتار للـ PS4</h1>
+        <p>اختر صورة، حدد الشكل، وحمل ملفك مباشرة!</p>
+        <form action="/convert" method="POST" enctype="multipart/form-data">
+            
+            <label for="image" class="upload-btn">اختر صورة من جهازك</label>
+            <input type="file" name="image" id="image" accept="image/*" required onchange="document.getElementById('file-name').innerText = this.files[0].name">
+            <p id="file-name" style="color: #aaa;">لم يتم اختيار ملف</p>
+
+            <div class="shape-select">
+                <label><input type="radio" name="shape" value="square" checked> مربع ⬛</label>
+                <label style="margin-right: 15px;"><input type="radio" name="shape" value="circle"> دائري ⚫</label>
+            </div>
+
+            <button type="submit">تحويل وتحميل .xavatar</button>
+        </form>
+    </div>
+</body>
+              </html>
